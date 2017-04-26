@@ -1,2 +1,2 @@
-# SystemConfigs
-Just my configuration files and stuff for my system.
+# system-configs
+Just my dotfiles and other stuff for my system. 
