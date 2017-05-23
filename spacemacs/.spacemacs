@@ -39,10 +39,16 @@ values."
      helm
      auto-completion
      ;; better-defaults
+     csharp
      emacs-lisp
      ;; git
+     html
+     java
+     javascript
      ;; markdown
      ;; org
+     python
+     ruby
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
