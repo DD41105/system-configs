@@ -7,24 +7,31 @@
     [[[child0]]]
       fullscreen = False
       last_active_term = ed51ab9b-c232-4f70-b679-d33ba8e17ae6
-      last_active_window = True
+      last_active_window = False
       maximised = False
       order = 0
       parent = ""
-      position = 576:251
-      size = 654, 529
-      title = dd@archdd:~/Downloads/mint-x-icons
+      position = 0:37
+      size = 636, 685
+      title = Terminator
       type = Window
     [[[terminal1]]]
       order = 0
       parent = child0
-      profile = TerminatorProfile
+      profile = June2017
       type = Terminal
       uuid = ed51ab9b-c232-4f70-b679-d33ba8e17ae6
 [plugins]
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
+  [[June2017]]
+    background_color = "#2e3436"
+    background_darkness = 0.97
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    foreground_color = "#577bfd"
+    palette = "#3465a4:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
   [[TerminatorProfile]]
     background_color = "#002b36"
     background_darkness = 0.85
