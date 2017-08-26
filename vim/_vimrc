@@ -10,6 +10,7 @@ Plug 'https://github.com/vim-airline/vim-airline.git'               " Vim-airlin
 Plug 'https://github.com/pangloss/vim-javascript.git'               " Vim-JavaScript
 Plug 'https://github.com/othree/html5.vim.git'                      " HTML5 for Vim
 Plug 'https://github.com/mxw/vim-jsx.git'                           " JSX for Vim
+Plug 'https://github.com/jiangmiao/auto-pairs.git'                  " Auto-pairs {}[]()
 call plug#end()
 
 " -------- GENERAL SETTINGS --------
