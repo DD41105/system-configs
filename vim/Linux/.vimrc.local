@@ -1,0 +1,7 @@
+" -------- GENERAL SETTINGS --------
+"  Make the backspace work like in most programs
+set backspace=indent,eol,start
+
+" -------- MAPPINGS --------
+" Open/close NERDTree
+map <C-n> : NERDTreeToggle<CR>
