@@ -61,19 +61,19 @@ bindsym $mod+Tab	    	workspace back_and_forth
 #END
 
 #Letter Keys
-bindsym $mod+q		kill
+bindsym $mod+q	    	kill
 bindsym $mod+Shift+q	kill
 
-bindsym $mod+w		exec qutebrowser
+bindsym $mod+w		    exec chromium 
 bindsym $mod+Shift+w	exec --no-startup-id $browser
 
-bindsym $mod+e		exec $term -e mutt
+bindsym $mod+e		    exec $term -e mutt
 bindsym $mod+Shift+e	exec $mail
 
-bindsym $mod+r 		exec $term -e ranger
+bindsym $mod+r 		    exec $term -e ranger
 bindsym $mod+Shift+r	restart
 
-bindsym $mod+t		split toggle
+bindsym $mod+t		    split toggle
 bindsym $mod+Shift+t	gaps inner all set 15; gaps outer all set 15
 
 #bindsym $mod+y		exec 
@@ -106,43 +106,43 @@ bindsym $mod+f		fullscreen toggle
 bindsym $mod+g		exec --no-startup-id gimp; workspace $ws5
 #bindsym $mod+Shift+g	exec 
 
-bindsym $mod+h		focus left
+bindsym $mod+h	    	focus left
 bindsym $mod+Shift+h	move left 30
 
-bindsym $mod+j		focus down
+bindsym $mod+j		    focus down
 bindsym $mod+Shift+j	move down 30
 
-bindsym $mod+k		focus up
+bindsym $mod+k	    	focus up
 bindsym $mod+Shift+k	move up 30
 
-bindsym $mod+l		focus right
+bindsym $mod+l	    	focus right
 bindsym $mod+Shift+l	move right 30
 
-bindsym $mod+z		gaps outer current plus 5
+bindsym $mod+z		    gaps outer current plus 5
 bindsym $mod+Shift+z	gaps outer current minus 5
 
 bindsym $mod+Shift+x	exec shutdown now
 
-bindsym $mod+c		split toggle
+bindsym $mod+c		    split toggle
 bindsym $mod+Shift+c	reload
 
-bindsym $mod+v		exec $term -e vis
+bindsym $mod+v		    exec $term -e vim
 bindsym $mod+Shift+v	exec --no-startup-id projectM-pulseaudio
 
-bindsym $mod+b		exec --no-startup-id mocp -r
+bindsym $mod+b		    exec --no-startup-id mocp -r
 bindsym $mod+Shift+b	exec --no-startup-id blender; workspace $ws6
 
-bindsym $mod+n		exec --no-startup-id mocp -f
+bindsym $mod+n	    	exec --no-startup-id mocp -f
 bindsym $mod+Shift+n	exec java -Xmx256m -Xms64m -jar ~/.config/TreeForm/TreeForm.jar
 
-bindsym $mod+m 		exec $term -e mocp
+bindsym $mod+m 		    exec $term -e mocp
 bindsym $mod+Shift+m	exec --no-startup-id pamixer -t
 #END
 
 #Function Buttons
 bindsym F1		exec --no-startup-id echo "help" > /dev/null
 #bindsym F2
-#bindsym F3 
+#bindsym F3
 #bindsym F4
 #bindsym F5
 #bindsym F6
@@ -161,7 +161,7 @@ bindsym $mod+F5		exec sudo systemctl restart NetworkManager
 #bindsym $mod+F6
 #bindsym $mod+F7
 #bindsym $mod+F8
-#bindsym $mod+F11	
+#bindsym $mod+F11
 #bindsym $mod+F12
 
 #Arrow Keys
@@ -213,12 +213,9 @@ bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
 for_window [class="Blender"] move to workspace $ws6
-for_window [class="Icedove"] move to workspace $ws9
-for_window [class="Iceweasel"] move to workspace $ws2
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
 for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
-for_window [window_role="tr-main"] move to workspace $ws8
 
 bindsym $mod+Home		workspace $ws1
 bindsym $mod+Shift+Home		move container to workspace $ws1
@@ -231,10 +228,10 @@ bindsym $mod+Shift+Next		move container to workspace next
 #END
 
 #Media
-bindsym $mod+plus		exec --no-startup-id pamixer -i 5
+bindsym $mod+plus	    	exec --no-startup-id pamixer -i 5
 bindsym $mod+Shift+plus		exec --no-startup-id pamixer -i 15
 
-bindsym $mod+minus 		exec --no-startup-id pamixer -d 5
+bindsym $mod+minus 		    exec --no-startup-id pamixer -d 5
 bindsym $mod+Shift+minus	exec --no-startup-id pamixer -d 15
 
 bindsym $mod+bracketleft 	exec --no-startup-id mocp -k -10
@@ -243,14 +240,14 @@ bindsym $mod+Shift+bracketleft 	exec --no-startup-id mocp -k -120
 bindsym $mod+bracketright 	exec --no-startup-id mocp -k 10
 bindsym $mod+Shift+bracketright exec --no-startup-id mocp -k 120
 
-bindsym Print 			exec --no-startup-id scrot
+bindsym Print 			    exec --no-startup-id scrot '%Y-%m-%d_%h-%m-%s.png' -q 100 -e 'mv $f ~/Pictures/'
 bindsym Shift+Print 		exec --no-startup-id scrot -u
-bindsym $mod+Print 		exec --no-startup-id $screencast
+bindsym $mod+Print 		    exec --no-startup-id $screencast
 bindsym $mod+Shift+Print 	exec --no-startup-id killall ffmpeg
 
 bindsym $mod+Scroll_Lock	exec --no-startup-id $audio
 
-bindsym XF86Launch1		exec --no-startup-id scrot
+bindsym XF86Launch1		    exec --no-startup-id scrot
 bindsym Shift+XF86Launch1	exec --no-startup-id scrot -u
 bindsym $mod+XF86Launch1	exec --no-startup-id $screencast
 bindsym $mod+Shift+XF86Launch1	exec --no-startup-id killall ffmpeg
@@ -263,15 +260,15 @@ bindsym XF86AudioStop		exec --no-startup-id mocp -G
 
 bindsym XF86AudioRaiseVolume	exec --no-startup-id pamixer -i 5
 bindsym XF86AudioLowerVolume	exec --no-startup-id pamixer -d 5
-bindsym XF86AudioMute		exec --no-startup-id pamixer -t
+bindsym XF86AudioMute		    exec --no-startup-id pamixer -t
 #END
 
-bindsym XF86Mail		exec $term -e mutt
+bindsym XF86Mail	    	exec $term -e mutt
 bindsym $mod+XF86Mail		exec $mail
 #bindsym XF86MyComputer		exec
 #bindsym $mod+XF86MyComputer	exec
 bindsym XF86HomePage		exec --no-startup-id $browser --new-window lukesmith.xyz
-bindsym $mod+XF86HomePage	exec --no-startup-id $browser 
+bindsym $mod+XF86HomePage	exec --no-startup-id $browser
 bindsym $mod+XF86WWW		exec --no-startup-id $browser
 
 bindsym XF86Calculator		exec $term -e qalc
