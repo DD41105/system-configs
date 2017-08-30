@@ -1,14 +1,17 @@
-#I3 Config (Luke Smith)
-#
-#
+# i3 Config (used Luke Smith's i3 config as a template)
 
-#Needed for i3-gaps
+# Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0 
-gaps inner 15 
+gaps inner 15
 gaps outer 15
+# Gaps will be used only if the container is not the only one on the workspace
+smart_gaps on
 
-#Basic settings
+# Keyboard layout options
+exec_always "setxkbmap -model pc105 -layout us(altgr-intl),bg(phonetic),tr -variant , -option grp:ctrl_shift_toggle"
+
+# Basic settings
 set $mod Mod4
 floating_modifier $mod
 set $term terminator
@@ -20,14 +23,14 @@ set $mail thunderbird
 #font pango:LiberationMono Sans Mono, Icons 11
 font pango:envypn 11
 exec --no-startup-id nm-applet
-#My background is always in ~/.config/wall.png. I have a shortcut in my file manager (ranger) that will automatically move a selected file here, so I can change by background on the go.
+# My background is always in ~/.config/wall.png. I have a shortcut in my file manager (ranger) that will automatically move a selected file here, so I can change by background on the go.
 exec_always --no-startup-id feh --bg-scale ~/.config/wall.png
 
 
 bar {
-	#This status command requires bumblebee-status. You must change it to your desired settings!
+	# This status command requires bumblebee-status. You must change it to your desired settings!
 	#	https://github.com/tobi-wan-kenobi/bumblebee-status
-	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m disk:home cpu memory date time weather pacman layout -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d %Y" home.format="{used}/{size}" home.path=/home memory.format="{used}/{total}" location=Sofia weather.interval=10 -t gruvbox-powerline
+	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m disk:home cpu memory date time weather pacman -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d %Y" home.format="{used}/{size}" home.path=/home memory.format="{used}/{total}" location=Sofia weather.interval=10 -t gruvbox-powerline
 	position top
 	tray_output none
 	}
@@ -37,15 +40,15 @@ bindsym $mod+Return 		exec $term
 bindsym $mod+Shift+Return 	exec $term -e tmux
 
 bindsym $mod+Shift+space 	floating toggle
-bindsym $mod+space		focus mode_toggle
+bindsym $mod+space  		focus mode_toggle
 
-bindsym $mod+Escape		exec --no-startup-id xset -display :0.0 dpms force off
+bindsym $mod+Escape	    	exec --no-startup-id xset -display :0.0 dpms force off
 bindsym $mod+Shift+Escape 	exec i3-msg exit
 
 #bindsym $mod+BackSpace		exec $term
 bindsym $mod+Shift+BackSpace	exec reboot
 
-bindsym $mod+Tab		workspace back_and_forth
+bindsym $mod+Tab	    	workspace back_and_forth
 
 #bindsym $mod+grave
 #bindsym $mod+asciitilde
@@ -58,7 +61,6 @@ bindsym $mod+Tab		workspace back_and_forth
 #END
 
 #Letter Keys
-
 bindsym $mod+q		kill
 bindsym $mod+Shift+q	kill
 
@@ -140,7 +142,7 @@ bindsym $mod+Shift+m	exec --no-startup-id pamixer -t
 #Function Buttons
 bindsym F1		exec --no-startup-id echo "help" > /dev/null
 #bindsym F2
-#bindsym F3
+#bindsym F3 
 #bindsym F4
 #bindsym F5
 #bindsym F6
