@@ -11,6 +11,9 @@ smart_gaps on
 # Keyboard layout options
 exec_always "setxkbmap -model pc105 -layout us(altgr-intl),bg(phonetic),tr -variant , -option grp:ctrl_shift_toggle"
 
+# Xflux options (f.lux for Linux - requires installation!)
+exec xflux -l 42.7 -g 23.3
+
 # Basic settings
 set $mod Mod4
 floating_modifier $mod
@@ -32,7 +35,7 @@ bar {
 	#	https://github.com/tobi-wan-kenobi/bumblebee-status
 	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m disk:home cpu memory pacman weather date time -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d %Y" home.format="{used}/{size}" home.path=/home memory.format="{used}/{total}" location=Sofia weather.interval=10 -t gruvbox-powerline
 	position top
-	tray_output none
+	tray_output primary
 	}
 
 
@@ -53,18 +56,18 @@ bindsym $mod+Tab	    	workspace back_and_forth
 #bindsym $mod+grave
 #bindsym $mod+asciitilde
 
-#bindsym $mod+XF86Back	
-#bindsym $mod+Shift+XF86Back	
+#bindsym $mod+XF86Back
+#bindsym $mod+Shift+XF86Back
 
 #bindsym $mod+XF86Forward
-#bindsym $mod+Shift+XF86Forward	
+#bindsym $mod+Shift+XF86Forward
 #END
 
 #Letter Keys
 bindsym $mod+q	    	kill
 bindsym $mod+Shift+q	kill
 
-bindsym $mod+w		    exec chromium 
+bindsym $mod+w		    exec chromium
 bindsym $mod+Shift+w	exec --no-startup-id $browser
 
 bindsym $mod+e		    exec $term -e mutt
@@ -76,35 +79,35 @@ bindsym $mod+Shift+r	restart
 bindsym $mod+t		    split toggle
 bindsym $mod+Shift+t	gaps inner all set 15; gaps outer all set 15
 
-#bindsym $mod+y		exec 
+#bindsym $mod+y
 bindsym $mod+Shift+y	resize shrink width 10 px or 10ppt
 
 #bindsym $mod+u
 bindsym $mod+Shift+u	resize shrink height 10 px or 10 ppt
 
-bindsym $mod+i 		exec $term -e htop
+bindsym $mod+i   		exec $term -e htop
 bindsym $mod+Shift+i	resize grow height 10 px or 10 ppt
 
-bindsym $mod+o		exec --no-startup-id mocp -j 0%
+bindsym $mod+o	    	exec --no-startup-id mocp -j 0%
 bindsym $mod+Shift+o	resize grow width 10 px or 10 ppt
 
-bindsym $mod+p		exec --no-startup-id mocp -G
+bindsym $mod+p		    exec --no-startup-id mocp -G
 bindsym $mod+Shift+p	exec pinta
 
-bindsym $mod+a		exec $term -e qalc
+bindsym $mod+a		    exec $term -e qalc
 bindsym $mod+Shift+a	exec audacity
 
-bindsym $mod+s		gaps inner current plus 5
+bindsym $mod+s		    gaps inner current plus 5
 bindsym $mod+Shift+s	gaps inner current minus 5
 
-bindsym $mod+d		exec rofi -show run
+bindsym $mod+d		    exec rofi -show run
 bindsym $mod+Shift+d	gaps inner all set 0; gaps outer all set 0
 
-bindsym $mod+f		fullscreen toggle
+bindsym $mod+f		    fullscreen toggle
 #bindsym $mod+Shift+f	exec thunar
 
-bindsym $mod+g		exec --no-startup-id gimp; workspace $ws5
-#bindsym $mod+Shift+g	exec 
+bindsym $mod+g		    exec --no-startup-id gimp; workspace $ws5
+#bindsym $mod+Shift+g
 
 bindsym $mod+h	    	focus left
 bindsym $mod+Shift+h	move left 30
@@ -140,7 +143,7 @@ bindsym $mod+Shift+m	exec --no-startup-id pamixer -t
 #END
 
 #Function Buttons
-bindsym F1		exec --no-startup-id echo "help" > /dev/null
+bindsym F1	        	exec --no-startup-id echo "help" > /dev/null
 #bindsym F2
 #bindsym F3
 #bindsym F4
@@ -150,14 +153,14 @@ bindsym F1		exec --no-startup-id echo "help" > /dev/null
 #bindsym F8
 #bindsym F9
 #bindsym F10
-bindsym F11		fullscreen toggle
+bindsym F11	        	fullscreen toggle
 #bindsym F12
 
 #bindsym $mod+F1
 #bindsym $mod+F2
-bindsym $mod+F3		exec arandr
-bindsym $mod+F4		exec sudo systemctl suspend
-bindsym $mod+F5		exec sudo systemctl restart NetworkManager
+bindsym $mod+F3		    exec arandr
+bindsym $mod+F4		    exec sudo systemctl suspend
+bindsym $mod+F5		    exec sudo systemctl restart NetworkManager
 #bindsym $mod+F6
 #bindsym $mod+F7
 #bindsym $mod+F8
@@ -165,14 +168,14 @@ bindsym $mod+F5		exec sudo systemctl restart NetworkManager
 #bindsym $mod+F12
 
 #Arrow Keys
-bindsym $mod+Left	focus left
-bindsym $mod+Down	focus down
-bindsym $mod+Up		focus up
-bindsym $mod+Right 	focus right
-bindsym $mod+Shift+Left	move left
-bindsym $mod+Shift+Down	move down
-bindsym $mod+Shift+Up	move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Left       	focus left
+bindsym $mod+Down	        focus down
+bindsym $mod+Up	    	    focus up
+bindsym $mod+Right 	        focus right
+bindsym $mod+Shift+Left	    move left
+bindsym $mod+Shift+Down	    move down
+bindsym $mod+Shift+Up	    move up
+bindsym $mod+Shift+Right    move right
 #END
 
 #Workspaces
