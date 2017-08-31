@@ -11,8 +11,8 @@ smart_gaps on
 # Keyboard layout options
 exec_always "setxkbmap -model pc105 -layout us(altgr-intl),bg(phonetic),tr -variant , -option grp:ctrl_shift_toggle"
 
-# Xflux options (f.lux for Linux - requires installation!)
-exec xflux -l 42.7 -g 23.3
+# Redshift settings - requires installation! Starts in auto mode
+exec --no-startup-id redshift
 
 # Basic settings
 set $mod Mod4
