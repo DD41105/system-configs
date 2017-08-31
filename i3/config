@@ -30,7 +30,7 @@ exec_always --no-startup-id feh --bg-scale ~/.config/wall.png
 bar {
 	# This status command requires bumblebee-status. You must change it to your desired settings!
 	#	https://github.com/tobi-wan-kenobi/bumblebee-status
-	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m disk:home cpu memory date time weather pacman -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d %Y" home.format="{used}/{size}" home.path=/home memory.format="{used}/{total}" location=Sofia weather.interval=10 -t gruvbox-powerline
+	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m disk:home cpu memory pacman weather date time -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d %Y" home.format="{used}/{size}" home.path=/home memory.format="{used}/{total}" location=Sofia weather.interval=10 -t gruvbox-powerline
 	position top
 	tray_output none
 	}
