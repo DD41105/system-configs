@@ -2,7 +2,7 @@
 
 # Needed for i3-gaps
 hide_edge_borders both
-for_window [class="^.*"] border pixel 0 
+for_window [class="^.*"] border pixel 0
 gaps inner 15
 gaps outer 15
 # Gaps will be used only if the container is not the only one on the workspace
@@ -10,9 +10,6 @@ smart_gaps on
 
 # Keyboard layout options
 exec_always "setxkbmap -model pc105 -layout us(altgr-intl),bg(phonetic),tr -variant , -option grp:ctrl_shift_toggle"
-
-# Redshift settings - requires installation! Starts in auto mode
-exec --no-startup-id redshift
 
 # Basic settings
 set $mod Mod4
@@ -48,19 +45,9 @@ bindsym $mod+space  		focus mode_toggle
 bindsym $mod+Escape	    	exec --no-startup-id xset -display :0.0 dpms force off
 bindsym $mod+Shift+Escape 	exec i3-msg exit
 
-#bindsym $mod+BackSpace		exec $term
 bindsym $mod+Shift+BackSpace	exec reboot
 
 bindsym $mod+Tab	    	workspace back_and_forth
-
-#bindsym $mod+grave
-#bindsym $mod+asciitilde
-
-#bindsym $mod+XF86Back
-#bindsym $mod+Shift+XF86Back
-
-#bindsym $mod+XF86Forward
-#bindsym $mod+Shift+XF86Forward
 #END
 
 #Letter Keys
@@ -70,32 +57,21 @@ bindsym $mod+Shift+q	kill
 bindsym $mod+w		    exec firefox
 bindsym $mod+Shift+w	exec --no-startup-id $browser
 
-bindsym $mod+e		    exec $term -e mutt
-bindsym $mod+Shift+e	exec $mail
-
 bindsym $mod+r 		    exec $term -e ranger
 bindsym $mod+Shift+r	restart
+
+bindsym $mod+n          exec nemo
 
 bindsym $mod+t		    split toggle
 bindsym $mod+Shift+t	gaps inner all set 15; gaps outer all set 15
 
-#bindsym $mod+y
 bindsym $mod+Shift+y	resize shrink width 10 px or 10ppt
 
-#bindsym $mod+u
 bindsym $mod+Shift+u	resize shrink height 10 px or 10 ppt
 
-bindsym $mod+i   		exec $term -e htop
 bindsym $mod+Shift+i	resize grow height 10 px or 10 ppt
 
-bindsym $mod+o	    	exec --no-startup-id mocp -j 0%
 bindsym $mod+Shift+o	resize grow width 10 px or 10 ppt
-
-bindsym $mod+p		    exec --no-startup-id mocp -G
-bindsym $mod+Shift+p	exec pinta
-
-bindsym $mod+a		    exec $term -e qalc
-bindsym $mod+Shift+a	exec audacity
 
 bindsym $mod+s		    gaps inner current plus 5
 bindsym $mod+Shift+s	gaps inner current minus 5
@@ -104,10 +80,8 @@ bindsym $mod+d		    exec rofi -show run
 bindsym $mod+Shift+d	gaps inner all set 0; gaps outer all set 0
 
 bindsym $mod+f		    fullscreen toggle
-#bindsym $mod+Shift+f	exec thunar
 
 bindsym $mod+g		    exec --no-startup-id gimp; workspace $ws5
-#bindsym $mod+Shift+g
 
 bindsym $mod+h	    	focus left
 bindsym $mod+Shift+h	move left 30
@@ -130,16 +104,6 @@ bindsym $mod+c		    split toggle
 bindsym $mod+Shift+c	reload
 
 bindsym $mod+v		    exec $term -e vim
-bindsym $mod+Shift+v	exec --no-startup-id projectM-pulseaudio
-
-bindsym $mod+b		    exec --no-startup-id mocp -r
-bindsym $mod+Shift+b	exec --no-startup-id blender; workspace $ws6
-
-bindsym $mod+n	    	exec --no-startup-id mocp -f
-bindsym $mod+Shift+n	exec java -Xmx256m -Xms64m -jar ~/.config/TreeForm/TreeForm.jar
-
-bindsym $mod+m 		    exec $term -e mocp
-bindsym $mod+Shift+m	exec --no-startup-id pamixer -t
 #END
 
 #Function Buttons
@@ -215,7 +179,6 @@ bindsym $mod+Shift+8	move container to workspace $ws8
 bindsym $mod+Shift+9	move container to workspace $ws9
 bindsym $mod+Shift+0	move container to workspace $ws10
 
-for_window [class="Blender"] move to workspace $ws6
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
 for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
