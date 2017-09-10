@@ -1,4 +1,4 @@
-My i3 config based on the one provided by Luke Smith.
+My i3 config based on the one provided by Luke Smith - https://github.com/LukeSmithxyz
 
 Dependencies:
 i3 gaps
