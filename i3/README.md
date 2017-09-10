@@ -19,3 +19,5 @@ Naturally be sure to replace whatever equivalent programs you have compared to t
 The GIMP window placement and the screenshot command settings will also need some tinkering depending on your resolution.
 
 The keyboard configuration file must be placed in /etc/X11/xorg.conf.d/00-keyboard.conf
+
+If the sound is not working it could be that automute is on. You might need to issue the pamixer -u command to unmute.
