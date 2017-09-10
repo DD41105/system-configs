@@ -23,12 +23,11 @@ set $mail thunderbird
 #font pango:LiberationMono Sans Mono, Icons 11
 font pango:envypn 11
 exec --no-startup-id nm-applet
-# My background is always in ~/.config/wall.png. I have a shortcut in my file manager (ranger) that will automatically move a selected file here, so I can change by background on the go.
-exec_always --no-startup-id feh --bg-scale ~/.config/wall.png
-
+# My background is always in ~/.config/i3/wall.png
+exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.png
 
 bar {
-	# This status command requires bumblebee-status. You must change it to your desired settings!
+# This status command requires bumblebee-status. You must change it to your desired settings!
 	#	https://github.com/tobi-wan-kenobi/bumblebee-status
 	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m disk:home cpu memory pacman weather date time -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d %Y" home.format="{used}/{size}" home.path=/home memory.format="{used}/{total}" location=Sofia weather.interval=10 -t gruvbox-powerline
 	position top
@@ -37,12 +36,10 @@ bar {
 
 
 bindsym $mod+Return 		exec $term
-bindsym $mod+Shift+Return 	exec $term -e tmux
 
 bindsym $mod+Shift+space 	floating toggle
 bindsym $mod+space  		focus mode_toggle
 
-bindsym $mod+Escape	    	exec --no-startup-id xset -display :0.0 dpms force off
 bindsym $mod+Shift+Escape 	exec i3-msg exit
 
 bindsym $mod+Shift+BackSpace	exec reboot
@@ -66,11 +63,8 @@ bindsym $mod+t		    split toggle
 bindsym $mod+Shift+t	gaps inner all set 15; gaps outer all set 15
 
 bindsym $mod+Shift+y	resize shrink width 10 px or 10ppt
-
 bindsym $mod+Shift+u	resize shrink height 10 px or 10 ppt
-
 bindsym $mod+Shift+i	resize grow height 10 px or 10 ppt
-
 bindsym $mod+Shift+o	resize grow width 10 px or 10 ppt
 
 bindsym $mod+s		    gaps inner current plus 5
@@ -150,7 +144,7 @@ set $ws3 "3: "
 set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: "
-set $ws7 "7"
+set $ws7 "7: "
 set $ws8 "8: "
 set $ws9 "9: "
 set $ws10 "10: "
@@ -237,4 +231,4 @@ bindsym XF86HomePage		exec --no-startup-id $browser --new-window lukesmith.xyz
 bindsym $mod+XF86HomePage	exec --no-startup-id $browser
 bindsym $mod+XF86WWW		exec --no-startup-id $browser
 
-bindsym XF86Calculator		exec $term -e qalc
+bindsym XF86Calculator exec $term -e qalc

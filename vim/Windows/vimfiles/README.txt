@@ -1,1 +1,0 @@
-This folder is needed to use Vim-plug.

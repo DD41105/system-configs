@@ -1,2 +1,2 @@
 # system-configs
-Just my dotfiles and other stuff for my system. 
+Dotfiles and other files for my Linux system.
