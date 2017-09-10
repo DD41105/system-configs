@@ -11,6 +11,8 @@ bumblebee-status - for the i3 status bar
 ttf-font-awesome - for the status bar icons
 python-requests - for the status bar modules
 python-netifaces - for the status bar modules
+dbus - for Spotify module
+Spotify - for music
 
 In order for this to work:
 - Make sure that the i3 folder is in your ~/.config directory.

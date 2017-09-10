@@ -3,8 +3,8 @@
 # Needed for i3-gaps
 hide_edge_borders both
 for_window [class="^.*"] border pixel 0
-gaps inner 15
-gaps outer 15
+gaps inner 10
+gaps outer 10
 # Gaps will be used only if the container is not the only one on the workspace
 smart_gaps on
 
@@ -25,11 +25,13 @@ font pango:envypn 11
 exec --no-startup-id nm-applet
 # My background is always in ~/.config/i3/wall.png
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.png
+# Start redshift in auto mode
+exec --no-startup-id redshift
 
 bar {
 # This status command requires bumblebee-status. You must change it to your desired settings!
 	#	https://github.com/tobi-wan-kenobi/bumblebee-status
-	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m disk:home cpu memory pacman weather date time -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d %Y" home.format="{used}/{size}" home.path=/home memory.format="{used}/{total}" location=Sofia weather.interval=10 -t gruvbox-powerline
+	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m spotify pasink disk:home cpu memory pacman weather date time -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d" home.format="{percent:04.01f}%" home.path=/home memory.format="{percent}%" location=Sofia weather.interval=10 -t gruvbox-powerline
 	position top
 	tray_output primary
 	}
