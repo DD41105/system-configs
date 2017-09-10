@@ -25,8 +25,6 @@ font pango:envypn 11
 exec --no-startup-id nm-applet
 # My background is always in ~/.config/i3/wall.png
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.png
-# Start redshift in auto mode
-exec --no-startup-id redshift
 
 bar {
 # This status command requires bumblebee-status. You must change it to your desired settings!
