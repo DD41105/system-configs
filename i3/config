@@ -1,4 +1,4 @@
-# i3 Config (used Luke Smith's i3 config as a template)
+# i3 Config (based on Luke Smith's i3 config)
 
 # Needed for i3-gaps
 hide_edge_borders both
@@ -15,25 +15,32 @@ exec_always "setxkbmap -model pc105 -layout us(altgr-intl),bg(phonetic),tr -vari
 set $mod Mod4
 floating_modifier $mod
 set $term terminator
-exec --no-startup-id xcompmgr
 set $browser firefox
 set $screencast  ffmpeg -y -f x11grab -video_size 1280x1024 -i :0.0 -f alsa -i default -c:v ffvhuff -r 30 -c:a flac output.mkv
 set $audio ffmpeg -f alsa -i default -c:a flac -y output.flac
 set $mail thunderbird
-#font pango:LiberationMono Sans Mono, Icons 11
 font pango:envypn 11
-exec --no-startup-id nm-applet
+
 # My background is always in ~/.config/i3/wall.png
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/wall.png
 
+#The wifi manager applet:
+exec --no-startup-id nework-manager-applet
+
+#For transparency:
+exec --no-startup-id xcompmgr -slt
+
 bar {
-# This status command requires bumblebee-status. You must change it to your desired settings!
-	#	https://github.com/tobi-wan-kenobi/bumblebee-status
-	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m spotify pasink disk:home cpu memory pacman weather date time -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d" home.format="{percent:04.01f}%" home.path=/home memory.format="{percent}%" location=Sofia weather.interval=10 -t kulade
+colors {
+	focused_workspace #008080 #008080 #ffffff
+	inactive_workspace #000000 #000000 #017373
+	active_workspace #000000 #000000 #008080
+	urgent_workspace #8B0000 #8B0000 #000000
+	}
+	status_command ~/.config/i3/bar/bumblebee-status -m spotify pasink disk:home cpu memory pacman weather date time -p interval=2.5 time.format="%H:%M" date.format="%a, %b %d" home.format="{percent:04.01f}%" home.path=/home memory.format="{percent}%" location=Sofia weather.interval=10 -t kulade
 	position top
 	tray_output primary
 	}
-
 
 bindsym $mod+Return 		exec $term
 
@@ -45,7 +52,6 @@ bindsym $mod+Shift+Escape 	exec i3-msg exit
 bindsym $mod+Shift+BackSpace	exec reboot
 
 bindsym $mod+Tab	    	workspace back_and_forth
-#END
 
 #Letter Keys
 bindsym $mod+q	    	kill
@@ -60,7 +66,7 @@ bindsym $mod+Shift+r	restart
 bindsym $mod+n          exec nemo
 
 bindsym $mod+t		    split toggle
-bindsym $mod+Shift+t	gaps inner all set 15; gaps outer all set 15
+bindsym $mod+Shift+t	gaps inner all set 10; gaps outer all set 10
 
 bindsym $mod+Shift+y	resize shrink width 10 px or 10ppt
 bindsym $mod+Shift+u	resize shrink height 10 px or 10 ppt
@@ -101,7 +107,7 @@ bindsym $mod+v		    exec $term -e vim
 #END
 
 #Function Buttons
-bindsym F1	        	exec --no-startup-id echo "help" > /dev/null
+#bindsym F1
 #bindsym F2
 #bindsym F3
 #bindsym F4
@@ -138,16 +144,16 @@ bindsym $mod+Shift+Right    move right
 
 #Workspaces
 
-set $ws1 "1: "
-set $ws2 "2: "
-set $ws3 "3: "
-set $ws4 "4: "
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
 set $ws5 "5: "
 set $ws6 "6: "
-set $ws7 "7: "
+set $ws7 "7: "
 set $ws8 "8: "
 set $ws9 "9: "
-set $ws10 "10: "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1		workspace $ws1
